@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
+import { Card } from "react-bootstrap";
 class Clock extends Component {
   constructor(props) {
     super(props);
@@ -25,9 +26,12 @@ class Clock extends Component {
         <h1>Hello, World!</h1>
         {this.state.post.map((post, indx) => (
           <div key={indx}>
-            <h2>abstract :{post.abstract}</h2>
-            <h2>title : {post.title}</h2>
-            <p>section: {post.section}</p>
+            <Card>
+              <img src={post.multimedia.url} alt="post" />
+              <h2>abstract :{post.abstract}</h2>
+              <h2>title : {post.title}</h2>
+              <p>section: {post.section}</p>
+            </Card>
           </div>
         ))}
       </div>
