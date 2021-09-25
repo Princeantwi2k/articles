@@ -1,43 +1,31 @@
-import React, { Component } from 'react';
-import Homepage from './Component/Homepage';
-import {BrowserRouter ,Switch,Route} from 'react-router-dom'
-import { Container } from 'react-bootstrap';
-import Favorite from './Component/Favorite'
-import Nav from './Component/Nav';
-import Blog from './Component/Blog';
-import Blog1 from './Component/Blog1';
-import TopMovies from './Component/TopMovies';
-import Blog2 from './Component/Blog2';
-class App extends Component {
-  render() {
-    return (
-      <>
-      <Container>
+import React from 'react';
+import Magazen from './Component/Magazen';
+import { BrowserRouter,Route,Switch } from 'react-router-dom';
+import Nav from './Component/Nav'
+import Sport from './Component/Sport';
+import Tech from './Component/Tech';
+import Science from './Component/Science';
+import Politics from './Component/Politics';
+import Business from './Component/Business';
+import Footer from './Component/Footer';
+const App = () => {
+  return (
+    <>
+    <BrowserRouter>
+    <Nav />
+ <Switch>
+   <Route path="/" exact component={Magazen} />
+   <Route path="/sport" component={Sport} />
+   <Route path="/tech" component={Tech} />
+   <Route path="/science" component={Science} />
+   <Route path="/poli" component={Politics} />
+   <Route path="/business" component={Business} />
+ </Switch>
+ <Footer />
+    </BrowserRouter>
      
-      <BrowserRouter>
-      <Nav />
-       <Switch>
-         <Route path="/" exact component={Homepage} />
-         <Route path="/favorite" component={Favorite} />
-         <Route path ="/top" component={TopMovies} />
-         <Route path="/blog2/:id" component={Blog2} />
-         <Route path="/blog/:id" component={Blog} />
-         <Route path="/blog1/:id" component={Blog1} />
-       </Switch>
-    
-        
-       </BrowserRouter>
-      </Container>
-      
-      
-          
-   
-       
-       
-     
-      </>
-    );
-  }
+    </>
+  );
 }
 
 export default App;
