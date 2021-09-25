@@ -1,47 +1,59 @@
-import React, { Component } from "react";
-import "./Nav.css";
+import React from "react";
 import { Link } from "react-router-dom";
+import "./Nav.css";
 
-class Nav extends Component {
-  handleChange = (e) => {
-    this.setState({ [e.target.name]: e.target.value });
-  };
-
-  render() {
-    return (
-      <>
-        <nav fixed="top">
-          <div class="logo">
-            JAH <span style={{ color: `red` }}>MOVIES</span>
+const Nav = () => {
+  return (
+    <div>
+      <nav>
+        <header>
+          <div className="logo">
+            Filler <span style={{ color: "red" }}>Hub</span>
           </div>
-          <div class="menu">
+          <div>
             <ul>
               <li>
-                <Link to="/" className="link">
-                  Home
+                <Link to="/" className="links">
+                  Magazine
                 </Link>
               </li>
               <li>
-                <Link to="/favorite" className="link">
-                  Favorite
+                {" "}
+                <Link to="/sport" className="links">
+                  {" "}
+                  Sport
+                </Link>{" "}
+              </li>
+              <li>
+                {" "}
+                <Link to="/tech" className="links">
+                  Technology
+                </Link>{" "}
+              </li>
+              <li>
+                {" "}
+                <Link to="/science" className="links">
+                  Science
+                </Link>{" "}
+              </li>
+              <li>
+                {" "}
+                <Link to="/poli" className="links">
+                  Politics
                 </Link>
               </li>
               <li>
-                <Link to="/top" className="link">
-                  Top Movies
-                </Link>
-              </li>
-              <li>
-                <Link to="/contact" className="link">
-                  Contact
-                </Link>
+                {" "}
+                <Link to="/business" className="links">
+                  Business
+                </Link>{" "}
               </li>
             </ul>
           </div>
-        </nav>
-      </>
-    );
-  }
-}
+        </header>
+      </nav>
+    </div>
+  );
+};
 
 export default Nav;
