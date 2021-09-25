@@ -1,44 +1,36 @@
 import React from "react";
-import { Card } from "react-bootstrap";
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import "./Tech.css";
 
-const Movielist = ({ movies }) => {
+const Movielist = (props) => {
   return (
     <>
-      {movies.map((movies, id) => (
-        <Link to={`/blog/${movies.id}`} className="links">
-          <div key={id}>
-            <Card className="card">
-              <img src={movies.src} alt="pic" className="img-responsive img" />
-              <h5>
-                {" "}
-                <span style={{ color: `orangered` }}>title</span> :{" "}
-                {movies.display_title}
-              </h5>
-              <h5>
-                <span style={{ color: `aqua` }}>headline </span>:{" "}
-                {movies.headline}
-              </h5>
-              <h5>
-                <span style={{ color: `orangered` }}>summary_short</span> :{" "}
-                {movies.summary_short}
-              </h5>
-              <h5>
-                {" "}
-                <span style={{ color: `aqua` }}>publication_date</span>:{" "}
-                {movies.publication_date}
-              </h5>
-            </Card>
-          </div>
-        </Link>
+      {props.magazen.map((magazen, idx) => (
+        <div key={idx}>
+          <img src={magazen.multimedia?.[0].url} alt="pic" className="pic" />
+          <h5 className="text">
+            <span style={{ color: "red" }}>Title:</span> {magazen.title}
+          </h5>
+          <h5 className="text">
+            <span style={{ color: "red" }}>abstract :</span>
+            {magazen.abstract}
+          </h5>
+          <h5 className="text">
+            {" "}
+            <span style={{ color: "red" }}>byline: </span>
+            {magazen.byline}
+          </h5>
+          <h5 className="text">
+            <span style={{ color: "red" }}>published_date :</span>{" "}
+            {magazen.published_date}
+          </h5>
+          <h5 className="text">
+            <span style={{ color: "red" }}>item_type :</span>{" "}
+            {magazen.item_type}
+          </h5>
+        </div>
       ))}
     </>
   );
 };
 
-const mapStateToProps = (state) => {
-  return { movies: state.movies };
-};
-
-export default connect(mapStateToProps)(Movielist);
+export default Movielist;
