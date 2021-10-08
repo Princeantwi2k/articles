@@ -3,9 +3,10 @@
   width: 50%;
   margin-left: 25%;
 }
-.pic > first-child {
-  margin-top: 10px;
+.pic :first-child {
+  margin-top: 20%;
 }
+
 .text {
   padding-left: 25%;
   padding-right: 25%;
@@ -14,7 +15,6 @@
   .pic {
     height: 300px;
     width: 70%;
-    margin-right: 10%;
     text-align: center;
   }
   .text {
