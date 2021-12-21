@@ -43,6 +43,9 @@ nav ul li a {
   font-family: sans-serif;
   text-transform: uppercase;
 }
+body {
+  background-color: black;
+}
 .links {
   color: white !important;
 }
@@ -52,6 +55,9 @@ nav ul li a {
     float: left;
     color: white;
     font-size: 20px;
+  }
+  body {
+    background-color: black;
   }
   .navbar-home {
     width: 100%;
